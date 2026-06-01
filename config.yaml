@@ -1,0 +1,62 @@
+project:
+  name: black-sea-species-distribution-modeling
+  output_dir: output
+
+region:
+  name: Black Sea
+  min_lon: 27.0
+  max_lon: 42.5
+  min_lat: 40.0
+  max_lat: 47.5
+  crs: EPSG:4326
+  projected_crs: EPSG:32636
+
+species:
+  - Engraulis encrasicolus
+  - Trachurus mediterraneus
+  - Sprattus sprattus
+  - Merlangius merlangus
+  - Mullus barbatus
+
+data_sources:
+  gbif:
+    enabled: true
+    max_records_per_species: 2000
+  obis:
+    enabled: false
+  gebco:
+    enabled: false
+    local_raster_path: data/external/gebco_black_sea.tif
+  copernicus:
+    enabled: false
+
+features:
+  use_lat_lon: true
+  use_month: true
+  use_distance_to_coast: true
+  use_depth: false
+  use_sst: false
+  use_salinity: false
+  use_chlorophyll: false
+
+sampling:
+  pseudo_absence_ratio: 1.0
+  random_seed: 42
+  grid_resolution_degrees: 0.25
+
+modeling:
+  target_column: presence
+  test_size: 0.25
+  random_seed: 42
+  models:
+    - random_forest
+    - gradient_boosting
+
+outputs:
+  save_clean_occurrences: true
+  save_training_dataset: true
+  save_prediction_grid: true
+  save_folium_map: true
+  save_metrics: true
+  save_feature_importance: true
+  save_species_summary: true
