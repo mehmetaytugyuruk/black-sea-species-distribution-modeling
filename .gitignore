@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local settings
+.env
+.DS_Store
+
+# Generated data and outputs
+data/raw/*
+data/processed/*
+data/external/*
+output/*
+
+# Keep directory placeholders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+!output/.gitkeep
+
+# Large model artifacts
+*.joblib
+*.pkl
+*.pickle
+
+# Large geospatial/environmental files
+*.tif
+*.tiff
+*.nc
