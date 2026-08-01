@@ -1,17 +1,18 @@
 # Black Sea Species Distribution Modeling
 
+**Repository guide:** [Overview](#overview) · [Methodology](#methodology-overview) · [Usage](#usage) · [Limitations](#limitations) · [Structure](#repository-structure)
+
 Reproducible Python GIS and machine learning pipeline for estimating habitat
 suitability of selected Black Sea marine species from open biodiversity
 occurrence records and lightweight spatial features.
 
-The project is designed as a portfolio-ready, minimum viable species
-distribution modeling workflow. It runs without paid APIs, private credentials,
-Copernicus login, or large raster downloads, while leaving clear extension
-points for richer oceanographic data.
+The pipeline runs without paid APIs, private credentials, Copernicus login, or
+large raster downloads, while leaving clear extension points for richer
+oceanographic data.
 
 ![Pipeline Overview](assets/pipeline_overview.png)
 
-## Project Summary
+## Overview
 
 This repository builds species-level habitat suitability models for selected
 Black Sea marine species. It fetches occurrence records from GBIF, cleans and
